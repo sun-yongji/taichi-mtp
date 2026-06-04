@@ -1,7 +1,0 @@
-numpy>=1.21
-
-[all]
-taichi-mtp[dev]
-
-[dev]
-pytest>=7

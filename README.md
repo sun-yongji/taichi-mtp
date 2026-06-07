@@ -1,3 +1,5 @@
+﻿[![CI](https://github.com/sun-yongji/taichi-mtp/actions/workflows/ci.yml/badge.svg)](https://github.com/sun-yongji/taichi-mtp/actions/workflows/ci.yml)
+
 # TaiChi-MTP 🔮 六爻深度调度的多Token预测引擎
 
 > 华为云杯2026 OPC大赛  |  太极矩阵 M2  |  Apache 2.0

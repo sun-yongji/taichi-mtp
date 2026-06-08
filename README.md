@@ -1,4 +1,4 @@
-﻿[![CI](https://github.com/sun-yongji/taichi-mtp/actions/workflows/ci.yml/badge.svg)](https://github.com/sun-yongji/taichi-mtp/actions/workflows/ci.yml)
+[![CI](https://github.com/sun-yongji/taichi-mtp/actions/workflows/ci.yml/badge.svg)](https://github.com/sun-yongji/taichi-mtp/actions/workflows/ci.yml)
 
 # TaiChi-MTP 🔮 六爻深度调度的多Token预测引擎
 
@@ -52,7 +52,7 @@ print(f"Depth: {result.depth_used}, Mode: {result.mode.value}")
 | M5 | [taichi-correct](https://gitee.com/sun-yongji-yuyubenyuan_admin/taichi-correct) | 共识校正 |
 | M6 | [taichi-matrix](https://gitee.com/sun-yongji-yuyubenyuan_admin/taichi-matrix) | 统一入口 |
 
-技术白皮书：[太极矩阵技术白皮书](https://docs.qq.com/aio/DTldDRGpIbGdseG1H)
+技术白皮书：[太极矩阵技术白皮书(中文)](https://docs.qq.com/aio/DTldDRGpIbGdseG1H) | [WHITEPAPER.md (English)](https://github.com/sun-yongji/taichi-matrix/blob/master/WHITEPAPER.md)
 
 ## 许可
 

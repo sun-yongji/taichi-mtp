@@ -15,7 +15,7 @@ def main():
     engine = create_mtp_engine(hidden_dim=256, output_dim=128, preset="balanced")
 
     print(f"\nEngine: {engine}")
-    print(f"Heads: {len(engine.heads)} (one per yao position)")
+    print(f"Heads: {len(engine.heads)} (one per group position)")
     print(f"Coupling topology: C6 hexagonal (60° cyclic)")
 
     # Simulate three input regimes
@@ -41,8 +41,8 @@ def main():
         print(f"  Head couplings:")
         for i, c in enumerate(result.head_couplings):
             bar = "█" * int(c * 50)
-            yao_names = ["初爻", "二爻", "三爻", "四爻", "五爻", "上爻"]
-            print(f"    Head {i} ({yao_names[i]:3s}) {c:.3f}  {bar}")
+            slot_names = ["g0", "g1", "g2", "g3", "g4", "g5"]
+            print(f"    Head {i} ({slot_names[i]:3s}) {c:.3f}  {bar}")
         print(f"  Head scores: {result.head_scores.round(3)}")
 
     # Depth stats

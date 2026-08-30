@@ -1,11 +1,11 @@
 """
 TaiChi-MTP: Multi-Token Prediction Engine
 
-Hexagram-inspired parallel inference: each yao position maps to a
+C6-symmetry-inspired parallel inference: each group position maps to a
 prediction head, coupled through hexagonal (C6) topology.
 
 Core concepts:
-- Depth N ∈ [1..6] maps to hexagram yao positions (初→上)
+- Depth N ∈ [1..6] maps to C6 structure group positions (g0→g5)
 - Hexagonal coupling matrix governs head interaction
 - Dynamic scheduler adjusts depth based on S-field coupling strength
 """
@@ -23,22 +23,22 @@ import numpy as np
 # Constants
 # ---------------------------------------------------------------------------
 
-# Maximum MTP depth (hexagram has 6 yao)
+# Maximum MTP depth (C6 group has 6 elements)
 MAX_DEPTH: int = 6
 
 # Hexagonal coupling angle (60° = 2π/6)
 HEX_ANGLE: float = math.pi / 3.0  # 60° in radians
 
 # Coupling matrix derived from C6 symmetry group
-# Each row corresponds to a yao-level prediction head;
-# columns represent influence from other yao positions.
+# Each row corresponds to a slot-level prediction head;
+# columns represent influence from other group positions.
 HEX_COUPLING_MATRIX: np.ndarray = np.array([
-    [1.000, 0.500, 0.000, 0.000, 0.000, 0.500],  # 初爻
-    [0.500, 1.000, 0.500, 0.000, 0.000, 0.000],  # 二爻
-    [0.000, 0.500, 1.000, 0.500, 0.000, 0.000],  # 三爻
-    [0.000, 0.000, 0.500, 1.000, 0.500, 0.000],  # 四爻
-    [0.000, 0.000, 0.000, 0.500, 1.000, 0.500],  # 五爻
-    [0.500, 0.000, 0.000, 0.000, 0.500, 1.000],  # 上爻
+    [1.000, 0.500, 0.000, 0.000, 0.000, 0.500],  # g0
+    [0.500, 1.000, 0.500, 0.000, 0.000, 0.000],  # g1
+    [0.000, 0.500, 1.000, 0.500, 0.000, 0.000],  # g2
+    [0.000, 0.000, 0.500, 1.000, 0.500, 0.000],  # g3
+    [0.000, 0.000, 0.000, 0.500, 1.000, 0.500],  # g4
+    [0.500, 0.000, 0.000, 0.000, 0.500, 1.000],  # g5
 ], dtype=np.float64)
 
 # Gold ratio entropy compensation for depth scheduling
@@ -150,7 +150,7 @@ def decide_depth_mode(coupling: np.ndarray) -> DepthMode:
     A concentrated (low-entropy) distribution indicates turbulence
     → SHALLOW prediction.
 
-    Entropy thresholds are calibrated to the C6 hexagram structure.
+    Entropy thresholds are calibrated to the C6 C6 structure structure.
     """
     eps = 1e-12
     ent = -float(np.sum(coupling * np.log(coupling + eps)))
@@ -181,7 +181,7 @@ def depth_for_mode(mode: DepthMode) -> int:
 class MTPHead:
     """A single multi-token prediction head.
 
-    Each head corresponds to one yao position in the hexagram,
+    Each head corresponds to one group position in the C6 structure,
     projecting hidden states to vocabulary/logit space.
     """
 
@@ -251,7 +251,7 @@ class DepthScheduler:
     """Dynamically selects how many tokens to predict based on S-field coupling.
 
     The scheduler maps the coupling strength distribution onto the
-    hexagram's 6-tier depth ladder:
+    C6 structure's 6-tier depth ladder:
 
     - Weak coupling (stable input)   → depth 6 (full confidence)
     - Moderate coupling              → depth 3-4

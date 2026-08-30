@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "taichi-mtp"
 version = "0.1.0"
-description = "Multi-Token Prediction Engine with hexagonal head coupling (Hexagram-inspired parallel inference)"
+description = "Multi-Token Prediction Engine with hexagonal head coupling (C6-symmetry-inspired parallel inference)"
 readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.9"

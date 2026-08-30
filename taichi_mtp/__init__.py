@@ -1,7 +1,7 @@
 """
 TaiChi-MTP: Multi-Token Prediction Engine
 
-Hexagram-inspired parallel inference: six yao positions map to six
+C6-symmetry-inspired parallel inference: six group positions map to six
 prediction heads, coupled through hexagonal (C6) topology.
 
 Key components:

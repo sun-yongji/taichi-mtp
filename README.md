@@ -2,11 +2,11 @@
 
 # TaiChi-MTP 🔮 六头深度调度的多 Token 预测引擎
 
-> 2026 上海开源软件应用创新大赛 | TaiChi Matrix M2 | Apache-2.0
+> 2026 上海开源软件应用创新大赛 | TaiChi Matrix M2 | CC-BY-SA-4.0
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
 [![Tests](https://img.shields.io/badge/tests-34/34-brightgreen.svg)]()
-[![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-CC--BY--SA--4.0-green.svg)](LICENSE)
 [![PyPI](https://img.shields.io/badge/PyPI-taichi--mtp-blue)](https://pypi.org/project/taichi-mtp/)
 
 ## 核心创新
@@ -63,4 +63,4 @@ TaiChi-MTP 是TaiChi Matrix 六模块工具链的 M2 站：
 
 ## 许可
 
-Apache-2.0 · 易宇本源研究中心 · 2026
+CC-BY-SA-4.0 · 易宇本源研究中心 · 2026
